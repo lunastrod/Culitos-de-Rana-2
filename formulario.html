@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+</head>
+<body>
+<div class="formulario">
+    <h2>Calcula tu prima de seguros en un par de pasos</h2>
+    <form action="submit">
+        <div class="input-name">
+            <label for="nombre"><em>Nombre:</em></label>
+            <input class="input" type="text" id="nombre" name="nombre" placeholder="Introduce tu nombre">
+        </div>
+
+        <div class="input-age-sex">
+            <label for="edad"><em>Edad:</em></label>
+            <input class="input" type="number" id="edad" name="edad" min="18" max="100">
+        </div>
+        <div class="input-province">
+            <label for="Provincia"><em>Provincia:</em></label>
+            <select class="input" id="provincia" name="provincia">
+                <option value="">Selecciona una provincia</option>
+                <option value="Madrid">Madrid</option>
+                <option value="Barcelona">Barcelona</option>
+                <option value="Valencia">Valencia</option>
+                <option value="Sevilla">Sevilla</option>
+                <option value="Zaragoza">Zaragoza</option>
+                <option value="Málaga">Málaga</option>
+                <option value="Murcia">Murcia</option>
+                <option value="Palma">Palma</option>
+                <option value="Bilbao">Bilbao</option>
+                <option value="Alicante">Alicante</option>
+            </select>
+        </div>
+
+        <div class="input-email">
+            <label for="email"><em>Email:</em></label>
+            <input class="input" type="email" id="email" name="email" placeholder="Introduce tu email">
+        </div>
+        <div class="input-phone">
+            <label for="telefono"><em>Teléfono:</em></label>
+            <input class="input" type="tel" id="telefono" name="telefono" placeholder="Introduce tu telefono">
+        </div>
+        <div class="input-message">
+            <label for="mensaje"><em>Mensaje:</em></label>
+            <textarea class="input" id="mensaje" name="mensaje" placeholder="Introduce tu mensaje"></textarea>
+        </div>
+        <div class="nomina">
+            <label for="nomina"><em>Sube La nomina</em></label>
+            <input class="input" type="file" id="nomina" name="nomina">
+        </div>
+        <div class="checkbox">
+            <input type="checkbox" id="terminos" name="terminos" value="acepto">
+            <label for="terminos">Acepto los terminos y condiciones</label>
+        </div>
+        <div class="Color-Fav">
+            <label for="colorFav"><em>Selecciona tu color favorito</em></label>
+            <input class="input" type="color" id="colorFav" name="colorFav">
+        </div>
+        <div class="input-radio">
+            <label for="sex"><em>Selecciona tu genero</em></label>
+            <input type="radio" id="masculino" name="genero" value="masculino">
+            <label for="masculino">Masculino</label>
+            <input type="radio" id="femenino" name="genero" value="femenino">
+            <label for="femenino">Femenino</label>
+        </div>
+        <div class="input-submit">
+            <input class="input" type="submit" value="Enviar">
+        </div>
+    </form>
+</div>
+</form>
+</div>
+</body>
+</html>
