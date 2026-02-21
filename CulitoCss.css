@@ -1,0 +1,209 @@
+:root {
+    --main-color: #6fc1f8;
+    --hover-color: #98ffb2;
+    /* tipos de letra */
+    --main-font: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+}
+
+.navigation {
+    /* posición */
+    position: sticky;
+    top: 0px;
+    right: 0px;
+    left: 0px;
+    z-index: 100;
+
+    /* tamaño */
+    width: 100%;
+    height: 70px;
+
+    /* contenedor */
+    background-color: var(--main-color);
+    display: flex;
+
+    font-family: var(--main-font);
+
+    /* borde debug */
+   /* border: 1px solid black*/ 
+}
+
+/*---OK----*/
+
+.logo {
+    /* tamaño */
+    height: 100%;
+    /* borde debug */
+    /*border: 1px solid black;*/
+}
+
+.logoTitle {
+    display: flex;
+    /* tamaño */
+    width: fit-content;
+
+    /* borde debug */
+    /*border: 1px solid black;*/
+}
+
+.title {
+    /* tamaño */
+    
+    /* posicion */
+    position: relative;
+    top: -25px;
+    /* contenido */
+    font-size: 40px;
+    color: #0300FF;
+    white-space: nowrap;
+
+    /* borde debug */ 
+    /*border: 1px solid black;*/
+}
+
+/*-------------------------------------*/
+
+#divContactos {
+    position: relative;
+}
+
+#contactos{
+    left: 0;
+    right: auto;
+}
+
+.grupMenu{
+    position: relative;
+    display: flex;
+    align-items: flex-end;         
+    margin-left: auto;
+}
+
+/*------------------------------------*/
+
+.dropdown {
+    /* tamaño */
+    width: max-content;
+    position: absolute;
+    display: none;
+    flex-direction: row;
+
+    list-style: none;
+
+    margin: 0px;
+    padding: 0px;
+    top: 100%;
+    left: auto;
+    right: 0;
+    /*gap: 5px;*/
+    
+    /* contenedor */
+    background-color: var(--main-color);
+
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-bottom-style: groove;
+    border-bottom-color: #0972b7;
+    
+    /* borde debug */
+    /*border: 1px solid black;*/
+}
+
+.dropdown li {
+    /* tamaño */
+    width: max-content;
+    height: fit-content;
+    padding: 2px 2px;
+    margin: 5px 2px;
+
+    /* contenido */
+    transition: .5s;
+    display: block;
+    
+    align-items: center;
+    justify-content: center;
+
+    border-right: 2px solid #0972b7;
+    color: #0300FF;
+    font-size: 20px;
+}
+
+.dropdown li:last-child{
+    border-right: none;
+}
+
+.dropdown li a {
+    /* contenido */
+    text-decoration: none;
+    color: #0300FF;
+    font-size: 20px;
+}
+
+.dropdown li:hover {
+    background-color: var(--hover-color);
+    border-radius: 10px;
+}
+
+.dropdownButton {
+    position: relative;
+    /* tamaño */
+    width: fit-content;
+    height: 50px;
+    /* posicion */
+    margin-right: 0px;
+    margin-left: 30px;
+    padding-bottom: 10px;
+
+    /* contenido */
+    font-family: var(--main-font);
+    text-align: center;
+    font-size: 25px;
+
+    background-color: var(--main-color);
+    color: #0300FF;
+    border-style: none;
+    border-radius: 20px;
+    /* borde debug */
+    /*border: 1px solid black;*/
+}
+
+.dropdownButton:hover {
+    background-color: var(--hover-color);
+}
+
+/*---------------------------------------------*/
+/* Botón 'Volver Arriba' */
+.returnTop {
+    /* posicion */
+    position: fixed;
+    bottom: 2%;
+    right: 2%;
+    z-index: 100;
+
+    /* borde debug */
+    /*border: 1px solid black;*/
+
+    /* contenedor */
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: var(--main-color);
+    transition: .3s;
+    
+}
+
+.returnTop img {
+    height: 100%;
+}
+
+.returnTop:hover {
+    background-color: var(--hover-color);
+}
+
+
+
+
