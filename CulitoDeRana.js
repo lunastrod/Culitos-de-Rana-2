@@ -11,6 +11,6 @@ function abrirForm(){
     let alto = screen.height/3;
     let x = (screen.width/2) - (ancho / 2);
     let y = (screen.height/2) - (alto / 2);
-    let pagForm = window.open("PagForm.html", "Registro", "width="+ancho+", height="+alto+", resizable=yes");
+    let pagForm = window.open("formulario.html", "Registro", "width="+ancho+", height="+alto+", resizable=yes");
     pagForm.moveTo(x,y);
 }
