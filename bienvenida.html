@@ -5,11 +5,20 @@
         <meta charset="UTF-8">
         <link rel="stylesheet" href="css/principal.css">
     </head>
-    <body>
+    <body onmouseleave="closePop()" onload="bienvenidaFehca()">
+        <nav class="navigation">
+            <div class="logoTitle">
+                <a href="CulitoDeRana.html"><img src="imagenes/rana.png" alt="logo" class="logo"></img></a>
+                <p class="title">Culitos de rana</p>
+            </div>
+        </nav>
+
         <div class="bienvenida">
             <h1>Bienvenido a culito de rana</h1>
             <br>
             <h2>Cuidamos tu culito</h2>
+            <h2 id="fecha" ></h2>
         </div>
+        <script src="js/CulitoDeRana.js"></script>
     </body>
 </html>

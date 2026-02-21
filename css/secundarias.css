@@ -1,0 +1,112 @@
+
+
+body {
+    margin: 0px;
+    background-color: #ffffff;
+}
+
+
+
+.person-card {
+    /* tamaño */
+    width: 400px;
+    height: 400px;
+
+    /* contenedor */
+    background-color: rgb(0, 0, 0);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    margin: 20px;
+    padding: 4px;
+
+    transition: transform 0.2s ease;
+    /* borde debug */
+    /*border: 1px solid black;*/
+}
+
+.person-card:hover {
+    transform: translateY(-10px);
+}
+
+.textbox {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid rgb(200, 200, 200);
+    border-radius: 10px;
+    background-color: rgb(245, 245, 245);
+}
+
+.textbox h1,h2,h3{
+    color: rgb(0, 0, 0);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+    text-align: center;
+}
+
+.textbox p{
+    color: rgb(77, 77, 77);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+}
+
+.textbox .texto-izquierda{
+    color: rgb(77, 77, 77);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: left;
+}
+
+.lista-iconos{
+    list-style-type: none;
+    padding: 0;
+    margin: 50px;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.lista-iconos li{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 15%;
+    margin: 20px;
+
+    color: rgb(77, 77, 77);
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.lista-iconos li img{
+    width: 100px;
+    height: 100px;
+    margin-bottom: 15px;
+    transition: transform 0.2s ease;
+}
+
+.lista-iconos li img:hover {
+    transform: translateY(-5px);
+}
+
+
+.lista-iconos li p{
+    color: rgb(77, 77, 77);
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.lista-iconos li h3{
+    color: rgb(0, 0, 0);
+    font-size: 20px;
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.company-building {
+    width: 45%;
+    height: auto;
+    margin-top: 20px;
+    margin-right: 5%;
+    border-radius: 10px;
+}
