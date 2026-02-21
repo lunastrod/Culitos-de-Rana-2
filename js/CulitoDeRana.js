@@ -62,6 +62,26 @@ function agregaListenerValidacion() {
     }
 }
 
+function validaFormulario() {
+    let valido = true;
+    for (let i = 0; i < VALIDACIONES.length; i++) {
+        let id = VALIDACIONES[i][0];
+        let campo = document.getElementById(id);
+        let value;
+        if (id === "terminos") {
+            value = campo.checked ? "acepto" : "";
+        } else if (id === "nomina") {
+            value = campo.files.length > 0 ? campo.files[0].name : "";
+        } else {
+            value = campo.value;
+        }
+        let error = validaCampo(id, value);
+        muestraError(id, error);
+        if (error) valido = false;
+    }
+    return valido;
+}
+
 function agregaListenerSubmit() {
     const form = document.querySelector("form");
     form.addEventListener("submit", (e) => {
