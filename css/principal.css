@@ -126,3 +126,8 @@
     margin: 5px;
     padding: 0;
 }
+
+.bienvenida{
+    display: flex;
+    background-color: rgba(224, 249, 255, 0.6);
+}
