@@ -5,6 +5,11 @@
     --main-font: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+body{
+    margin: 0;
+    padding: 0;
+}
+
 .navigation {
     /* posición */
     position: sticky;
@@ -12,7 +17,6 @@
     right: 0px;
     left: 0px;
     z-index: 100;
-    margin-top: 0px;
 
     /* tamaño */
     width: 100%;
@@ -21,19 +25,14 @@
     /* contenedor */
     background-color: var(--main-color);
     display: flex;
-    justify-content: space-between;
-
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
-
-    border-bottom-style: groove;
-    border-bottom-color: #1a9ef7;
 
     font-family: var(--main-font);
 
     /* borde debug */
    /* border: 1px solid black*/ 
 }
+
+/*---OK----*/
 
 .logo {
     /* tamaño */
@@ -45,7 +44,7 @@
 .logoTitle {
     display: flex;
     /* tamaño */
-    width: 500px;
+    width: fit-content;
 
     /* borde debug */
     /*border: 1px solid black;*/
@@ -62,25 +61,51 @@
     color: #0300FF;
     white-space: nowrap;
 
-    /* borde debug */
+    /* borde debug */ 
     /*border: 1px solid black;*/
 }
 
+/*-------------------------------------*/
+
+#divContactos {
+    position: relative;
+}
+
+#contactos{
+    left: 0;
+    right: auto;
+}
+
+.grupMenu{
+    position: relative;
+    display: flex;
+    align-items: flex-end;         
+    margin-left: auto;
+}
+
+/*------------------------------------*/
+
 .dropdown {
     /* tamaño */
-    width: 200px;
+    width: max-content;
+    position: absolute;
+    display: none;
+    flex-direction: row;
 
-    /* contenido */
-    overflow: hidden;
     list-style: none;
+
     margin: 0px;
     padding: 0px;
-
+    top: 100%;
+    left: auto;
+    right: 0;
+    /*gap: 5px;*/
+    
     /* contenedor */
     background-color: var(--main-color);
 
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
     border-bottom-style: groove;
     border-bottom-color: #0972b7;
     
@@ -88,26 +113,27 @@
     /*border: 1px solid black;*/
 }
 
-.dropdown:hover {
-    /* tamaño*/
-    height: fit-content;
-}
-
 .dropdown li {
     /* tamaño */
-    width: 100%;
-    height: 50px;
-
-    /* posicion */
-    margin-bottom: 5px;
+    width: max-content;
+    height: fit-content;
+    padding: 2px 2px;
+    margin: 5px 2px;
 
     /* contenido */
     transition: .5s;
-    display: flex;
+    display: block;
+    
     align-items: center;
     justify-content: center;
-    /* borde debug */
-    /*border: 1px solid black;*/
+
+    border-right: 2px solid #0972b7;
+    color: #0300FF;
+    font-size: 20px;
+}
+
+.dropdown li:last-child{
+    border-right: none;
 }
 
 .dropdown li a {
@@ -119,24 +145,37 @@
 
 .dropdown li:hover {
     background-color: var(--hover-color);
+    border-radius: 10px;
 }
 
-.dropdownIcon {
+.dropdownButton {
+    position: relative;
     /* tamaño */
-    height: 70px;
+    width: fit-content;
+    height: 50px;
     /* posicion */
-    margin: 0px;
-    padding-top: 20px;
+    margin-right: 0px;
+    margin-left: 30px;
+    padding-bottom: 10px;
+
     /* contenido */
     font-family: var(--main-font);
     text-align: center;
     font-size: 25px;
 
+    background-color: var(--main-color);
     color: #0300FF;
+    border-style: none;
+    border-radius: 20px;
     /* borde debug */
     /*border: 1px solid black;*/
 }
 
+.dropdownButton:hover {
+    background-color: var(--hover-color);
+}
+
+/*---------------------------------------------*/
 /* Botón 'Volver Arriba' */
 .returnTop {
     /* posicion */
@@ -164,3 +203,7 @@
 .returnTop:hover {
     background-color: var(--hover-color);
 }
+
+
+
+
