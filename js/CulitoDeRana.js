@@ -28,7 +28,7 @@ function bienvenidaFehca(){
 
 const VALIDACIONES = [
     ["nombre",    /^[a-zA-ZÀ-ÿ ]{2,100}$/,         "Solo letras, entre 2 y 100 caracteres."],
-    ["id",        /^.{8}$/,                        "El ID debe tener al menos 8 caracteres."],
+    ["id",        /^.{8,}$/,                        "El ID debe tener al menos 8 caracteres."],
     ["edad",    /^(1[89]|[2-9]\d|1[0-4]\d)$/,       "La edad debe estar entre 18 y 149."],
     ["provincia", /^.+$/,                       "Selecciona una provincia."],
     ["email",     /^[^\s@]+@[^\s@]+\.[^\s@]+$/,     "Introduce un email válido."],
