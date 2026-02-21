@@ -87,7 +87,7 @@ function agregaListenerSubmit() {
     form.addEventListener("submit", (e) => {
         e.preventDefault();
         if (validaFormulario()) {
-            //pop("enviado.html", 3, 3);
+            pop("enviado.html", 3, 3);
         }
     });
 }
@@ -98,7 +98,7 @@ let timerInactividad = null;
 function resetInactividad() {
     clearTimeout(timerInactividad);
     timerInactividad = setTimeout(() => {
-        //pop("inactividad.html", 3, 3);
+        pop("inactividad.html", 3, 3);
     }, INACTIVIDAD_MS);
 }
 
@@ -156,7 +156,7 @@ function actualizarContador() {
     document.getElementById("btnEnviar").style.backgroundColor = colorAleatorio();
     if (tiempoRestante <= 0) {
         clearInterval(intervalSesion);
-        //pop("sesionExpirada.html", 3, 3);
+        pop("inactividad.html", 3, 3);
     }
 }
 
