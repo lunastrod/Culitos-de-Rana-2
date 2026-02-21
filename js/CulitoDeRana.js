@@ -58,7 +58,6 @@ function agregaListenerValidacion() {
     for (let i = 0; i < VALIDACIONES.length; i++) {
         let id = VALIDACIONES[i][0];
         let campo = document.getElementById(id);
-        console.log(id)
         campo.addEventListener("blur", () => {
             let value;
             if (id === "terminos") {
@@ -74,19 +73,59 @@ function agregaListenerValidacion() {
     }
 }
 
+function validaFormulario() {
+    let valido = true;
+    for (let i = 0; i < VALIDACIONES.length; i++) {
+        let id = VALIDACIONES[i][0];
+        let campo = document.getElementById(id);
+        let value;
+        if (id === "terminos") {
+            value = campo.checked ? "acepto" : "";
+        } else if (id === "nomina") {
+            value = campo.files.length > 0 ? campo.files[0].name : "";
+        } else {
+            value = campo.value;
+        }
+        let error = validaCampo(id, value);
+        muestraError(id, error);
+        if (error) valido = false;
+    }
+    return valido;
+}
+
 function agregaListenerSubmit() {
     const form = document.querySelector("form");
     form.addEventListener("submit", (e) => {
         e.preventDefault();
         if (validaFormulario()) {
-            // popup de formulario enviado
+            pop("enviado.html", 3, 3);
         }
     });
+}
+
+const INACTIVIDAD_MS = 15000;
+let timerInactividad = null;
+
+function resetInactividad() {
+    clearTimeout(timerInactividad);
+    timerInactividad = setTimeout(() => {
+        pop("inactividad.html", 3, 3);
+    }, INACTIVIDAD_MS);
+}
+
+function comprobarInactividad(){
+    document.addEventListener("mousemove", resetInactividad);
+    document.addEventListener("keydown", resetInactividad);
+    document.addEventListener("click", resetInactividad);
+    document.addEventListener("scroll", resetInactividad);
+    document.addEventListener("input", resetInactividad);
 }
 
 document.addEventListener("DOMContentLoaded", () => {
     agregaListenerValidacion();
     agregaListenerSubmit();
+    comprobarInactividad();
+    setInterval(actualizarContador, TICK_MS);
 });
 
 function muestraError(id, error) {
@@ -101,7 +140,40 @@ function muestraError(id, error) {
         span.style.cssText = "color:#cc0000;font-size:0.78rem;display:block;margin-top:4px;padding-left:4px;";
         campo.parentElement.appendChild(span);
         campo.style.borderColor = "#cc0000";
+        campo.style.backgroundColor = "#ffe4e4";
+        campo.style.color = "#8a0000";
     } else {
         campo.style.borderColor = "#22c55e";
+        campo.style.backgroundColor = "#e4ffe8";
+        campo.style.color = "#006d28";
     }
+}
+
+const SESION_MS = 5 * 60 * 1000;
+const TICK_MS = 1000;
+let tiempoRestante = SESION_MS;
+let intervalSesion = null;
+const TITULO_BASE = document.title;
+
+function formatTiempo(ms) {
+    const m = Math.floor(ms / 60000);
+    const s = Math.floor((ms % 60000) / 1000);
+    return `${m}:${s.toString().padStart(2, "0")}`;
+}
+
+function actualizarContador() {
+    tiempoRestante -= TICK_MS;
+    document.title = formatTiempo(tiempoRestante) +" | "+ TITULO_BASE
+    document.getElementById("btnEnviar").style.backgroundColor = colorAleatorio();
+    if (tiempoRestante <= 0) {
+        clearInterval(intervalSesion);
+        pop("inactividad.html", 3, 3);
+    }
+}
+
+function colorAleatorio() {
+    const r = Math.floor(Math.random() * 256);
+    const g = Math.floor(Math.random() * 256);
+    const b = Math.floor(Math.random() * 256);
+    return `rgb(${r}, ${g}, ${b})`;
 }
