@@ -68,14 +68,34 @@ function agregaListenerSubmit() {
     form.addEventListener("submit", (e) => {
         e.preventDefault();
         if (validaFormulario()) {
-            // popup de formulario enviado
+            //pop("enviado.html", 3, 3);
         }
     });
+}
+
+const INACTIVIDAD_MS = 15000;
+let timerInactividad = null;
+
+function resetInactividad() {
+    clearTimeout(timerInactividad);
+    timerInactividad = setTimeout(() => {
+        //pop("inactividad.html", 3, 3);
+    }, INACTIVIDAD_MS);
+}
+
+function comprobarInactividad(){
+    document.addEventListener("mousemove", resetInactividad);
+    document.addEventListener("keydown", resetInactividad);
+    document.addEventListener("click", resetInactividad);
+    document.addEventListener("scroll", resetInactividad);
+    document.addEventListener("input", resetInactividad);
 }
 
 document.addEventListener("DOMContentLoaded", () => {
     agregaListenerValidacion();
     agregaListenerSubmit();
+    comprobarInactividad();
+    setInterval(actualizarContador, TICK_MS);
 });
 
 function muestraError(id, error) {
@@ -92,5 +112,27 @@ function muestraError(id, error) {
         campo.style.borderColor = "#cc0000";
     } else {
         campo.style.borderColor = "#22c55e";
+    }
+}
+
+const SESION_MS = 5 * 60 * 1000;
+const TICK_MS = 1000;
+let tiempoRestante = SESION_MS;
+let intervalSesion = null;
+const TITULO_BASE = document.title;
+
+function formatTiempo(ms) {
+    const m = Math.floor(ms / 60000);
+    const s = Math.floor((ms % 60000) / 1000);
+    return `${m}:${s.toString().padStart(2, "0")}`;
+}
+
+function actualizarContador() {
+    tiempoRestante -= TICK_MS;
+    document.title = formatTiempo(tiempoRestante) +" | "+ TITULO_BASE
+
+    if (tiempoRestante <= 0) {
+        clearInterval(intervalSesion);
+        //pop("sesionExpirada.html", 3, 3);
     }
 }
