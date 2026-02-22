@@ -98,7 +98,7 @@ function agregaListenerSubmit() {
     form.addEventListener("submit", (e) => {
         e.preventDefault();
         if (validaFormulario()) {
-            pop("enviado.html", 3, 3);
+            pop("enviado.html", 4, 5);
         }
     });
 }
@@ -109,7 +109,7 @@ let timerInactividad = null;
 function resetInactividad() {
     clearTimeout(timerInactividad);
     timerInactividad = setTimeout(() => {
-        pop("inactividad.html", 3, 3);
+        pop("inactividad.html", 4, 5);
     }, INACTIVIDAD_MS);
 }
 

@@ -6,6 +6,18 @@
     --texto-fuente: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow-y: scroll;
+    scrollbar-width: none;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+    display: none;
+}
+
 .presentacion {
     display: flex;
     flex-direction: column;
@@ -140,8 +152,11 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    height: 74vh;
     border-radius: 10px;
+    
+    height: calc(100vh - 70px);
+    width: 100%;
+    box-sizing: border-box;
 
     background-color: rgba(224, 239, 255, 0.6);
     background-size: cover;
@@ -151,10 +166,7 @@
     font-family: var(--main-font);
 }
 
-body{
-    margin: 0;
-    padding: 0;
-}
+/*-------------------------------------------------*/
 
 .navigation {
     /* posición */
@@ -218,6 +230,8 @@ body{
     right: auto;
 }
 
+/*-----------------------------------*/
+
 .grupMenu{
     position: relative;
     display: flex;
@@ -230,6 +244,7 @@ body{
 .dropdown {
     /* tamaño */
     width: max-content;
+    height: max-content;
     position: absolute;
     display: none;
     flex-direction: row;
@@ -346,17 +361,29 @@ body{
     background-color: var(--hover-color);
 }
 
+/*---------------------------------------------*/
+
+.body-formulario{
+    background-color: #00ccbe5f;
+}
+
+.envoltorio-formulario {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
 .formulario {
     margin: 20px;
-    background-color: #ffffff;
+    background-color: white;
     border-radius: 10px;
     padding: 30px;
-    max-width: 500px;
+    max-width: 700px;
     resize: none;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: var(--main-font-color);
 }
@@ -756,4 +783,11 @@ footer {
     margin: 0 auto;
     width: fit-content;
     font-size: 1.1rem;
+}
+
+.vidEnPros{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 79.2vh;
 }
