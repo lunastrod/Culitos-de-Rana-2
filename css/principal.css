@@ -384,7 +384,7 @@ body::-webkit-scrollbar {
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: var(--main-font);
     color: var(--main-font-color);
 }
 
@@ -473,7 +473,7 @@ body::-webkit-scrollbar {
     padding: 12px;
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 10px;
     width: 100%;
 }
 
