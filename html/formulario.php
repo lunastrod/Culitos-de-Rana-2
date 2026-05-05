@@ -17,7 +17,7 @@
     <div class="envoltorio-formulario">
         <div class="formulario">
             <h2>Calcula tu prima de seguros en un par de pasos</h2>
-            <form action="submit">
+            <form action="../php/insertUsuario.php" method="post" enctype="multipart/form-data">
 
                 <div class="input-name">
                     <label for="nombre"><em>Nombre:</em></label>

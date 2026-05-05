@@ -96,7 +96,6 @@ function validaFormulario() {
 function agregaListenerSubmit() {
     const form = document.querySelector("form");
     form.addEventListener("submit", (e) => {
-        e.preventDefault();
         if (validaFormulario()) {
             pop("enviado.html", 4, 5);
         }
