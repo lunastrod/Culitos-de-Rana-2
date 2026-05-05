@@ -1,0 +1,1 @@
+en este directorio se guardarán las nóminas de los usuarios.

@@ -35,7 +35,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (isset($_FILES['nomina']) && $_FILES['nomina']['name'] != '') {
         $nombreArchivo = time() . '_' . $_FILES['nomina']['name'];
         $rutaTemporal = $_FILES['nomina']['tmp_name'];
-        $rutaDestino = '../uploads/nominas/' . $nombreArchivo;
+        $rutaDestino = '../ficheros/nominas/' . $nombreArchivo;
 
         if (move_uploaded_file($rutaTemporal, $rutaDestino)) {
             $nominaFichero = $rutaDestino;
