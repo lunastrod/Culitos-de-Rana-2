@@ -2,12 +2,13 @@
 
 # Base de datos
 
-TODO: validar contraseña en modificar form
-en formulario de editar el nav no despliega menu
-ver usuarios no funciona
-iniciar sesion contraseña oculta
+TODO: 
+validar contraseña en modificar form
+--en formulario de editar el nav no despliega menu
+--ver usuarios no funciona
+--iniciar sesion contraseña oculta
 deberiamos validar en iniciar sesion que si no pulsa terminos y condiciones no deje aceptar
-usuario existente al hacer otro admin?
+--usuario existente al hacer otro admin?
 formulario supremo pobrecito, no valida los datos, agregar a nav
 
 
