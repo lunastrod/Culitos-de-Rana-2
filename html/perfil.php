@@ -30,6 +30,7 @@ $mensajes_error = [
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perfil de Usuario</title>
     <link rel="stylesheet" href="../css/principal.css">
+    <script src="../js/CulitoDeRana.js"></script>
 </head>
 <body class="body-formulario">
     <?php require_once '../php/nav.php'; ?>
