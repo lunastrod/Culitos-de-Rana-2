@@ -7,9 +7,12 @@ validar contraseña en modificar form
 --en formulario de editar el nav no despliega menu
 --ver usuarios no funciona
 --iniciar sesion contraseña oculta
-deberiamos validar en iniciar sesion que si no pulsa terminos y condiciones no deje aceptar
+deberiamos validar en registrar que si no pulsa terminos y condiciones no deje aceptar
 --usuario existente al hacer otro admin?
 formulario supremo pobrecito, no valida los datos, agregar a nav
+boton editar en lista usuarios no funciona
+Gestion de usuarios Nuevo usuario no funciona
+usuarioExistente no existe
 
 
 

@@ -32,18 +32,20 @@ function agregaListenerValidacion() {
     for (let i = 0; i < VALIDACIONES.length; i++) {
         let id = VALIDACIONES[i][0];
         let campo = document.getElementById(id);
-        campo.addEventListener("blur", () => {
-            let value;
-            if (id === "terminos") {
-                value = campo.checked ? "acepto" : "";
-            } else if (id === "nomina") {
-                value = campo.files.length > 0 ? campo.files[0].name : "";
-            } else {
-                value = campo.value;
-            }
-            let error = validaCampo(id, value);
-            muestraError(id, error);
-        });
+        if(campo){
+            campo.addEventListener("blur", () => {
+                let value;
+                if (id === "terminos") {
+                    value = campo.checked ? "acepto" : "";
+                } else if (id === "nomina") {
+                    value = campo.files.length > 0 ? campo.files[0].name : "";
+                } else {
+                    value = campo.value;
+                }
+                let error = validaCampo(id, value);
+                muestraError(id, error);
+            });
+        }
     }
 }
 
@@ -53,16 +55,17 @@ function validaFormulario() {
         let id = VALIDACIONES[i][0];
         let campo = document.getElementById(id);
         let value;
+        if(!campo) continue;
         if (id === "terminos") {
             value = campo.checked ? "acepto" : "";
         } else if (id === "nomina") {
             value = campo.files.length > 0 ? campo.files[0].name : "";
         } else {
-            value = campo.value;
+             value = campo.value;
+             let error = validaCampo(id, value);
+            muestraError(id, error);
+            if (error) valido = false;
         }
-        let error = validaCampo(id, value);
-        muestraError(id, error);
-        if (error) valido = false;
     }
     return valido;
 }
@@ -71,7 +74,7 @@ function agregaListenerSubmit() {
     const form = document.querySelector("form");
     form.addEventListener("submit", (e) => {
         if (validaFormulario()) {
-            pop("enviado.html", 4, 5);
+            //pop("enviado.html", 4, 5);
         }
     });
 }
@@ -82,7 +85,7 @@ let timerInactividad = null;
 function resetInactividad() {
     clearTimeout(timerInactividad);
     timerInactividad = setTimeout(() => {
-        pop("inactividad.html", 4, 5);
+        //pop("inactividad.html", 4, 5);
     }, INACTIVIDAD_MS);
 }
 
@@ -140,7 +143,7 @@ function actualizarContador() {
     document.getElementById("btnEnviar").style.backgroundColor = colorAleatorio();
     if (tiempoRestante <= 0) {
         clearInterval(intervalSesion);
-        pop("inactividad.html", 3, 3);
+        //pop("inactividad.html", 3, 3);
     }
 }
 
@@ -154,7 +157,9 @@ function colorAleatorio() {
 document.getElementById('nombre').addEventListener('input', function(){
     const nombre = this.value;
     const mensaje = document.getElementById('mensajeNombre');
-
+    if(!mensaje){
+        return;
+    }
     if(nombre.length < 3){
         mensaje.textContent = '';
         return;
