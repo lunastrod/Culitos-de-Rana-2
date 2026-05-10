@@ -35,11 +35,11 @@
                     <li><a href="../html/formularioInicioSesion.html">Iniciar sesión</a></li>
                     <li><a href="../html/formularioRegistrarse.html">Registrarse</a></li>
                 <?php }elseif($_SESSION["access"] === 1){ ?>
-                    <li><a href="enProceso.html">Cuenta</a></li>
+                    <li><a href="../html/perfil.php">Cuenta</a></li>
                     <li><a href="enProceso.html">Ver Usuarios</a></li>
                     <li><a href="../php/cerrarS.php">Cerrar Sesión</a></li>
                 <?php }elseif($_SESSION["access"] === 2){ ?>
-                    <li><a href="../html/enProceso.html">Cuenta</a></li>
+                    <li><a href="../html/perfil.php">Cuenta</a></li>
                     <li><a href="../php/cerrarS.php">Cerrar Sesión</a></li>
                 <?php } ?>
             </ul>
