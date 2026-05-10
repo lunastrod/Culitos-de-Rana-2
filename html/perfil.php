@@ -20,6 +20,7 @@ $mensajes_error = [
     'pwd_incorrecta'    => 'La contraseña actual no es correcta.',
     'usuario_existente' => 'Ese nombre de usuario ya está en uso.',
     'pwd_no_coinciden'  => 'Las contraseñas nuevas no coinciden.',
+    'pwd_formato'       => 'La contraseña debe tener mínimo 8 caracteres y sin espacios.',
     'error_bd'          => 'Error al actualizar. Inténtalo de nuevo.',
 ];
 ?>

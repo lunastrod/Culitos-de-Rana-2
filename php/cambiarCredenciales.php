@@ -47,6 +47,10 @@ if ($nuevo_username !== $username_actual) {
 
 // Construir la consulta según si cambia contraseña o no
 if (!empty($nueva_pwd)) {
+    if (!preg_match('/^\S{8,}$/', $nueva_pwd)) {
+        header("Location: ../html/perfil.php?error=pwd_formato");
+        exit;
+    }
     if ($nueva_pwd !== $confirmar_pwd) {
         header("Location: ../html/perfil.php?error=pwd_no_coinciden");
         exit;
