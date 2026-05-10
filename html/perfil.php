@@ -67,7 +67,7 @@ $mensajes_error = [
 
             <form action="../php/cambiarCredenciales.php" method="post" style="width:100%;">
                 <div class="input-name">
-                    <label><em>Nuevo usuario:</em></label>
+                    <label for="nombre"><em>Nuevo usuario:</em></label>
                     <input class="input" type="text" name="nuevo_username"
                            value="<?php echo htmlspecialchars($username); ?>" required>
                 </div>
@@ -77,12 +77,12 @@ $mensajes_error = [
                            placeholder="Obligatorio para guardar" required>
                 </div>
                 <div class="input-name">
-                    <label><em>Nueva contraseña:</em></label>
+                    <label for="contrasenia"><em>Nueva contraseña:</em></label>
                     <input class="input" type="password" name="nueva_pwd"
                            placeholder="Déjalo vacío para no cambiarla">
                 </div>
                 <div class="input-name">
-                    <label><em>Confirmar contraseña:</em></label>
+                    <label for="contrasenia"><em>Confirmar contraseña:</em></label>
                     <input class="input" type="password" name="confirmar_pwd"
                            placeholder="Repite la nueva contraseña">
                 </div>
