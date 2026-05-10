@@ -7,12 +7,12 @@
 Enlace a github: https://github.com/lunastrod/Culitos-de-Rana-2
 
 # Instrucciones de uso
-Entrar en el index.html, este fichero redirige a la página principal.
-La base de datos está en AWS creada, no es necesario crear una tabla local para usar la base de datos.
-Los formularios principales están en el menu principal, esquina superior derecha. Se puede iniciar sesión o registrarse.
-Una vez iniciada sesión, se puede acceder a un formulario de edición de contraseña y nombre de usuario.
-Para crear un usuario administrador se debe acceder a formularioRegistrarseAdmin.html manualmente.
-Si el usuario es administrador, se puede acceder a la página listaUsuarios.php que permite eliminar usuarios y ver todos los usuarios registrados.
+- Entrar en el index.html, este fichero redirige a la página principal.
+- La base de datos está en AWS creada, no es necesario crear una tabla local para usar la base de datos.
+- Los formularios principales están en el menu principal, esquina superior derecha. Se puede iniciar sesión o registrarse.
+- Una vez iniciada sesión, se puede acceder a un formulario de edición de contraseña y nombre de usuario.
+- Para crear un usuario administrador se debe acceder a formularioRegistrarseAdmin.html manualmente.
+- Si el usuario es administrador, se puede acceder a la página listaUsuarios.php que permite eliminar usuarios y ver todos los usuarios registrados.
 
 # Requisitos del Proyecto
 
