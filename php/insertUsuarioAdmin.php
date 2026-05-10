@@ -9,8 +9,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         isset($_POST['acceso']) && !empty($_POST['acceso'])
     ) {
 
-        $nombre = 'Zoe';
-        $pwd = password_hash('culitorules', PASSWORD_DEFAULT);
+        $nombre = $_POST['nombre'];
+        $pwd = password_hash($_POST['contrasenia'], PASSWORD_DEFAULT);
         $access = 1;
 
         $stmt = $conn->prepare(
