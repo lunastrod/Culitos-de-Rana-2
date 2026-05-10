@@ -414,6 +414,14 @@ body::-webkit-scrollbar {
     align-items: center;
 }
 
+.input-contrasenia{
+    padding: 12px;
+    display: flex;
+    gap: 16px;
+    width: 100%;
+    align-items: center;
+}
+
 .input-age-sex {
     padding: 12px;
     display: flex;

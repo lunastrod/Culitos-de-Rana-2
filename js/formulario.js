@@ -1,5 +1,6 @@
 const VALIDACIONES = [
     ["nombre",    /^[a-zA-ZÀ-ÿ ]{2,100}$/,         "Solo letras, entre 2 y 100 caracteres."],
+    ["contrasenia",  /^[^\s]{8,}$/,                 "La contraseña debe tener minimo 8 caracteres y sin espacios"],
     ["id",        /^.{8,}$/,                        "El ID debe tener al menos 8 caracteres."],
     ["edad",    /^(1[89]|[2-9]\d|1[0-4]\d)$/,       "La edad debe estar entre 18 y 149."],
     ["provincia", /^.+$/,                       "Selecciona una provincia."],

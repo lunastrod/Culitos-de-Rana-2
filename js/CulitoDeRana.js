@@ -11,6 +11,18 @@ function closePop(){
     window.close();
 }
 
+function popSesion(popUp){
+    let ancho = 548;
+    let alto = 412;
+    let x = (screen.width/2) - (ancho / 2);
+    let y = (screen.height/2) - (alto / 2);
+    let ventanaN = "pop_" + Date.now();
+    let pagForm = window.open(popUp, ventanaN, "width="+ancho+", height="+alto+", resizable=yes");
+    if(pagForm){
+        pagForm.moveTo(x,y);
+    }
+}
+
 function pop(popUp, splAn, splAl){
     let ancho = screen.width/splAn;
     let alto = screen.height/splAl;

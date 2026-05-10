@@ -4,5 +4,8 @@ USE proyectophp2;
 CREATE TABLE users(
     id int AUTO_INCREMENT NOT NULL PRIMARY KEY,
 	username varchar(100) NOT NULL,
-    pwd varchar(255) NOT NULL 
+    pwd varchar(255) NOT NULL,
+    access int NOT NULL
 );
+
+

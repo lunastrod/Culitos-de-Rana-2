@@ -5,59 +5,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if (
         isset($_POST['nombre']) && !empty($_POST['nombre']) &&
-        isset($_POST['id']) && !empty($_POST['id']) &&
-        isset($_POST['edad']) && !empty($_POST['edad']) &&
-        isset($_POST['provincia']) && !empty($_POST['provincia']) &&
-        isset($_POST['email']) && !empty($_POST['email']) &&
-        isset($_POST['telefono']) && !empty($_POST['telefono']) &&
-        isset($_POST['mensaje']) && !empty($_POST['mensaje']) &&
-        isset($_POST['colorFav']) && !empty($_POST['colorFav']) &&
-        isset($_POST['genero']) && !empty($_POST['genero']) &&
-        isset($_POST['valoracion']) && !empty($_POST['valoracion']) &&
-        isset($_POST['fecha']) && !empty($_POST['fecha'])
+        isset($_POST['contrasenia']) && !empty($_POST['contrasenia']) &&
+        isset($_POST['acceso']) && !empty($_POST['acceso'])
     ) {
 
     $nombre = $_POST['nombre'];
-    $dni = $_POST['id'];
-    $edad = $_POST['edad'];
-    $provincia = $_POST['provincia'];
-    $email = $_POST['email'];
-    $telefono = $_POST['telefono'];
-    $mensajeInfo = $_POST['mensaje'];
-    $colorFavorito = $_POST['colorFav'];
-    $genero = $_POST['genero'];
-    $valoracion = $_POST['valoracion'];
-    $fechaNacimiento = $_POST['fecha'];
-    $nominaFichero = '';
-
-    if (isset($_FILES['nomina']) && $_FILES['nomina']['name'] != '') {
-        $nombreArchivo = time() . '_' . $_FILES['nomina']['name'];
-        $rutaTemporal = $_FILES['nomina']['tmp_name'];
-        $rutaDestino = '../ficheros/nominas/' . $nombreArchivo;
-
-        if (move_uploaded_file($rutaTemporal, $rutaDestino)) {
-            $nominaFichero = $rutaDestino;
-        }
-    }
-
-    $edad = (int) $edad;
-    $valoracion = $valoracion === '' ? 0 : (int) $valoracion;
+    $pwd = password_hash($_POST['contrasenia'], PASSWORD_DEFAULT);
+    $access = $_POST['acceso'];
 
     $stmt = $conn->prepare(
-        'INSERT INTO usuario (
-            nombre,
-            dni,
-            edad,
-            provincia,
-            email,
-            telefono,
-            mensaje_info,
-            nomina_fichero,
-            color_favorito,
-            genero,
-            valoracion,
-            fecha_nacimiento
-        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)'
+        'INSERT INTO users (
+            username,
+            pwd,
+            access
+        ) VALUES (?, ?, ?)'
     );
 
     if (!$stmt) {
@@ -65,19 +26,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     $stmt->bind_param(
-        'ssisssssssis',
+        'ssi',
         $nombre,
-        $dni,
-        $edad,
-        $provincia,
-        $email,
-        $telefono,
-        $mensajeInfo,
-        $nominaFichero,
-        $colorFavorito,
-        $genero,
-        $valoracion,
-        $fechaNacimiento
+        $pwd,
+        $access
     );
 
     if ($stmt->execute()) {

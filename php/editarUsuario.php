@@ -43,7 +43,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     $stmt = $conn->prepare(
-        'UPDATE usuario SET
+        'UPDATE users SET
             nombre = ?,
             dni = ?,
             edad = ?,

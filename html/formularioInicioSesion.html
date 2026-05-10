@@ -16,96 +16,27 @@
 
     <div class="envoltorio-formulario">
         <div class="formulario">
-            <h2>Calcula tu prima de seguros en un par de pasos</h2>
-            <form action="../php/insertUsuario.php" method="post" enctype="multipart/form-data">
+            <h2>Inicia sesión</h2>
+            <form action="" method="post" enctype="multipart/form-data">
 
                 <div class="input-name">
                     <label for="nombre"><em>Nombre:</em></label>
                     <input class="input" type="text" id="nombre" name="nombre" placeholder="Introduce tu nombre">
                 </div>
 
-                <div class="input-id">
-                    <label for="id"><em>Introduce tu ID privado</em></label>
-                    <input class="input" type="password" id="id" name="id" placeholder="Introduce tu ID privado">
+                <div class="input-contrasenia">
+                    <label for="contrasenia"><em>Contraseña:</em></label>
+                    <input type="text" class="input" id="contrasenia" name="contrasenia" placeholder="Introduce tu contraseña">
                 </div>
 
-                <div class="input-age-sex">
-                    <label for="edad"><em>Edad:</em></label>
-                    <input class="input" type="number" id="edad" name="edad">
-                </div>
+                <br>
 
-                <div class="input-province">
-                    <label for="provincia"><em>Provincia:</em></label>
-                    <select class="input" id="provincia" name="provincia">
-                        <option value="">Selecciona una provincia</option>
-                        <option value="Madrid">Madrid</option>
-                        <option value="Barcelona">Barcelona</option>
-                        <option value="Valencia">Valencia</option>
-                        <option value="Sevilla">Sevilla</option>
-                        <option value="Zaragoza">Zaragoza</option>
-                        <option value="Málaga">Málaga</option>
-                        <option value="Murcia">Murcia</option>
-                        <option value="Palma">Palma</option>
-                        <option value="Bilbao">Bilbao</option>
-                        <option value="Alicante">Alicante</option>
-                    </select>
-                </div>
-
-                <div class="input-email">
-                    <label for="email"><em>Email:</em></label>
-                    <input class="input" type="email" id="email" name="email" placeholder="Introduce tu email">
-                </div>
-
-                <div class="input-phone">
-                    <label for="telefono"><em>Teléfono:</em></label>
-                    <input class="input" type="tel" id="telefono" name="telefono" placeholder="Introduce tu telefono">
-                </div>
-
-                <div class="input-message">
-                    <label for="mensaje"><em>Mensaje:</em>Info Importante</label>
-                    <textarea class="input" id="mensaje" name="mensaje" placeholder="Introduce tu mensaje"></textarea>
-                </div>
-
-                <div class="nomina">
-                    <label for="nomina"><em>Sube la nómina</em></label>
-                    <input class="input" type="file" id="nomina" name="nomina">
-                </div>
-
-                <div class="color-fav">
-                    <label for="colorFav"><em>Selecciona tu color favorito</em></label>
-                    <input class="input" type="color" id="colorFav" name="colorFav">
-                </div>
-
-                <div class="input-radio">
-                    <label><em>Selecciona tu género</em></label>
-                    <input type="radio" id="masculino" name="genero" value="masculino">
-                    <label for="masculino">Masculino</label>
-                    <input type="radio" id="femenino" name="genero" value="femenino">
-                    <label for="femenino">Femenino</label>
-                </div>
-
-                <div class="valoracion">
-                    <label for="valoracion"><em>Valoración 1-100</em></label>
-                    <input type="range" id="valoracion" name="valoracion" min="1" max="100" value="95">
-                </div>
-
-                <div class="fecha">
-                    <label for="fecha"><em>Fecha de nacimiento</em></label>
-                    <input type="date" id="fecha" name="fecha">
-                </div>
-
-                <div class="checkbox">
-                    <input type="checkbox" id="terminos" name="terminos" value="acepto">
-                    <label for="terminos">Acepto los términos y condiciones</label>
+                <div class="ref-registrarse">
+                    <a href="formularioRegistrarse.html">Registrarse</a>
                 </div>
 
                 <div class="input-submit">
                     <input class="input" type="submit" id="btnEnviar" value="Enviar">
-                </div>
-
-                <div class="limpiar">
-                    <input type="reset" id="limpiar">
-                    <label for="limpiar"><em>Limpiar</em></label>
                 </div>
 
             </form>
@@ -113,5 +44,5 @@
 
     </div>
 </body>
-<script src="../js\formulario.js"></script>
+<script src="../js/formulario.js"></script>
 </html>
