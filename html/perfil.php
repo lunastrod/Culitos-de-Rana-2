@@ -20,6 +20,7 @@ $mensajes_error = [
     'pwd_incorrecta'    => 'La contraseña actual no es correcta.',
     'usuario_existente' => 'Ese nombre de usuario ya está en uso.',
     'pwd_no_coinciden'  => 'Las contraseñas nuevas no coinciden.',
+    'pwd_formato'       => 'La contraseña debe tener mínimo 8 caracteres y sin espacios.',
     'error_bd'          => 'Error al actualizar. Inténtalo de nuevo.',
 ];
 ?>
@@ -78,12 +79,12 @@ $mensajes_error = [
                 </div>
                 <div class="input-name">
                     <label for="contrasenia"><em>Nueva contraseña:</em></label>
-                    <input class="input" type="password" name="nueva_pwd"
+                    <input class="input" type="password" name="nueva_pwd" id="contrasenia"
                            placeholder="Déjalo vacío para no cambiarla">
                 </div>
                 <div class="input-name">
-                    <label for="contrasenia"><em>Confirmar contraseña:</em></label>
-                    <input class="input" type="password" name="confirmar_pwd"
+                    <label for="confirmar_pwd"><em>Confirmar contraseña:</em></label>
+                    <input class="input" type="password" name="confirmar_pwd" id="confirmar_pwd"
                            placeholder="Repite la nueva contraseña">
                 </div>
                 <br>
