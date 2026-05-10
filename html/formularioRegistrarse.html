@@ -9,7 +9,7 @@
 <body class="body-formulario">
     <nav class="navigation">
             <div class="logoTitle">
-                <a href="CulitoDeRana.html"><img src="../imagenes/rana.png" alt="logo" class="logo"></img></a>
+                <a href="CulitoDeRana.php"><img src="../imagenes/rana.png" alt="logo" class="logo"></img></a>
                 <p class="title">Culitos de rana</p>
             </div>
     </nav>
@@ -17,11 +17,12 @@
     <div class="envoltorio-formulario">
         <div class="formulario">
             <h2>Registra tu culito</h2>
-            <form action="../php/insertUsuario.php" method="post" enctype="multipart/form-data">
+            <form action="../php/insertUsuario.php" method="post" >
 
                  <div class="input-name">
                     <label for="nombre"><em>Nombre:</em></label>
                     <input class="input" type="text" id="nombre" name="nombre" placeholder="Introduce tu nombre">
+                    <p id="mensajeNombre"></p>
                 </div>
 
                 <div class="input-contrasenia">
@@ -29,15 +30,19 @@
                     <input type="text" class="input" id="contrasenia" name="contrasenia" placeholder="Introduce tu contraseña">
                 </div>
 
-                <div class="input-acceso">
-                    <label for="acceso"><em>acceso</em></label>
-                    <input type="number" class="input" id="acceso" name="acceso">
+                <div class="checkbox">
+                    <input type="checkbox" id="terminos" name="terminos" value="acepto">
+                    <label for="terminos">Acepto los términos y condiciones</label>
+                </div>
+
+                <div>
+                    <input type="hidden" id="acceso" value="2" name="acceso">
                 </div>
 
                 <br>
 
                 <div class="input-submit">
-                    <input class="input" type="submit" id="btnEnviar" value="Enviar">
+                    <input class="input" type="submit" id="btnEnviar" value="Registrarse">
                 </div>
 
             </form>

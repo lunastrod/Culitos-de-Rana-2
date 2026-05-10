@@ -9,39 +9,43 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         isset($_POST['acceso']) && !empty($_POST['acceso'])
     ) {
 
-    $nombre = $_POST['nombre'];
-    $pwd = password_hash($_POST['contrasenia'], PASSWORD_DEFAULT);
-    $access = $_POST['acceso'];
+        $nombre = $_POST['nombre'];
+        $pwd = password_hash($_POST['contrasenia'], PASSWORD_DEFAULT);
+        $access = $_POST['acceso'];
 
-    $stmt = $conn->prepare(
-        'INSERT INTO users (
+        $stmt = $conn->prepare(
+            'INSERT INTO users (
             username,
             pwd,
             access
         ) VALUES (?, ?, ?)'
-    );
+        );
 
-    if (!$stmt) {
-        die('Error preparando la consulta: ' . $conn->error);
-    }
+        if (!$stmt) {
+            die('Error preparando la consulta: ' . $conn->error);
+        }
 
-    $stmt->bind_param(
-        'ssi',
-        $nombre,
-        $pwd,
-        $access
-    );
+        $stmt->bind_param(
+            'ssi',
+            $nombre,
+            $pwd,
+            $access
+        );
 
-    if ($stmt->execute()) {
-        include 'baseDatosActualizada.html';
-        exit;
-    }
-
-    die('Error insertando usuario: ' . $stmt->error);
+        try {
+            if ($stmt->execute()) {
+                header("Location: ../html/formularioInicioSesion.html");
+                exit;
+            }
+        } catch (mysqli_sql_exception $e) {
+            if ($conn->errno == 1062) {
+                header("Location: ../html/usuarioExistente.html");
+            }
+            die('Error insertando usuario: ' . $e->getMessage());
+        }
     } else {
         include 'datosIncompletos.html';
     }
 } else {
     include 'accesoNoAutorizado.html';
 }
-?>

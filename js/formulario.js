@@ -150,3 +150,31 @@ function colorAleatorio() {
     const b = Math.floor(Math.random() * 256);
     return `rgb(${r}, ${g}, ${b})`;
 }
+
+document.getElementById('nombre').addEventListener('input', function(){
+    const nombre = this.value;
+    const mensaje = document.getElementById('mensajeNombre');
+
+    if(nombre.length < 3){
+        mensaje.textContent = '';
+        return;
+    }
+
+    fetch('../php/comprobarUsuario.php?nombre=' + encodeURIComponent(nombre)) .then(r => r.json()) 
+    .then(data => {
+        if(data.existe){
+            mensaje.textContent = 'Usuario en uso';
+            mensaje.style.color = 'red';
+        }else{
+            mensaje.textContent = 'Usuario disponible';
+            mensaje.style.color = 'green';
+        }
+    })
+})
+
+const params = new URLSearchParams(window.location.search);
+
+if (params.get('error') === 'credenciales') {
+    document.getElementById('mensajeError').style.display = 'block';
+    document.getElementById('mensajeError').style.color = 'red';
+}

@@ -1,3 +1,7 @@
+<?php 
+session_start();
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,51 +11,13 @@
 </head>
 
 <body onload="pop('bienvenida.html',4,4)">
-    <nav class="navigation">
-        <div class="logoTitle">
-            <a href="CulitoDeRana.html"><img src="../imagenes/rana.png" alt="logo" class="logo"></img></a>
-            <p class="title">Culitos de rana</p>
-        </div>
-
-        <div class="grupMenu">
-            <div id="divContactos" class="divMenu" onmouseover="mostrarMenu('contactos')"
-                onmouseleave="ocultarMenu('contactos')">
-                <button class="dropdownButton">Contáctanos</button>
-
-                <ul id="contactos" class="dropdown">
-                    <li><a href="tel:123456789">Teléfono Particulares</a></li>
-                    <li><a href="tel:987654321">Teléfono Empresas</a></li>
-                    <li><a href="mailto:culitosrana@gmail.com">Email</a></li>
-                </ul>
-            </div>
-
-            <div class="divMenu" onmouseover="mostrarMenu('menu')" onmouseleave="ocultarMenu('menu')">
-                <button class="dropdownButton">Nosotros</button>
-
-                <ul id="menu" class="dropdown">
-                    <li><a href="CulitoDeRana.html">Principal</a></li>
-                    <li><a href="nuestraEmpresa.html">Nuestra Empresa</a></li>
-                    <li><a href="nuestrosClientes.html">Nuestros Clientes</a></li>
-                    <li><a href="conoceANuestroEquipo.html">Nuestro Equipo</a></li>
-                    <li><a href="conoceANuestraMascota.html">Nuestra Mascota</a></li>
-                </ul>
-
-            </div>
-
-            <div class="divMenu" onmouseover="mostrarMenu('culito')" onmouseleave="ocultarMenu('culito')">
-                <button class="dropdownButton">Tu culito</button>
-
-                <ul id="culito" class="dropdown">
-                    <li><a href="enProceso.html">Cuenta</a></li>
-                    <li><a href="enProceso.html">Configuración</a></li>
-                    <li onclick="popSesion('formularioInicioSesion.html')">Iniciar sesión</li>
-                    <li onclick="popSesion('formularioRegistrarse.html')">Registrarse</li>
-                </ul>
-
-            </div>
-        </div>
-
-    </nav>
+    <?php 
+    if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+    }
+    require_once '../php/nav.php';
+    require_once '../php/conexion.php';
+    ?>
 
     <a href="#top" class="returnTop"><img src="../imagenes/flechaArriba.png" alt="ir arriba"></a>
 

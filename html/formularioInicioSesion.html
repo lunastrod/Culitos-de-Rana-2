@@ -9,7 +9,7 @@
 <body class="body-formulario">
     <nav class="navigation">
             <div class="logoTitle">
-                <a href="CulitoDeRana.html"><img src="../imagenes/rana.png" alt="logo" class="logo"></img></a>
+                <a href="CulitoDeRana.php"><img src="../imagenes/rana.png" alt="logo" class="logo"></img></a>
                 <p class="title">Culitos de rana</p>
             </div>
     </nav>
@@ -17,7 +17,7 @@
     <div class="envoltorio-formulario">
         <div class="formulario">
             <h2>Inicia sesión</h2>
-            <form action="" method="post" enctype="multipart/form-data">
+            <form action="../php/login.php" method="post" enctype="multipart/form-data">
 
                 <div class="input-name">
                     <label for="nombre"><em>Nombre:</em></label>
@@ -29,6 +29,8 @@
                     <input type="text" class="input" id="contrasenia" name="contrasenia" placeholder="Introduce tu contraseña">
                 </div>
 
+                <p id="mensajeError">Usuario o contraseña incorrectos</p>
+
                 <br>
 
                 <div class="ref-registrarse">
@@ -36,7 +38,7 @@
                 </div>
 
                 <div class="input-submit">
-                    <input class="input" type="submit" id="btnEnviar" value="Enviar">
+                    <input class="input" type="submit" id="btnEnviar" value="Entrar">
                 </div>
 
             </form>

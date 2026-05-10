@@ -414,6 +414,10 @@ body::-webkit-scrollbar {
     align-items: center;
 }
 
+#mensajeError{
+    display: none;
+}
+
 .input-contrasenia{
     padding: 12px;
     display: flex;
