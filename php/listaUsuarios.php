@@ -65,5 +65,5 @@ if ($_SERVER["REQUEST_METHOD"] != "GET") {
         </tbody>
     </table>
 </body>
-
+<script src="../js/CulitoDeRana.js"></script>
 </html>
