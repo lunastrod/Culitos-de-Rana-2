@@ -108,7 +108,7 @@ $mensajes_error = [
         </div>
     </div>
 
-    <script>
+    <script src="../js/formulario.js">
     function confirmarEliminar() {
         if (confirm('¿Estás seguro de que quieres eliminar tu cuenta?\nEsta acción no se puede deshacer.')) {
             document.getElementById('formEliminar').submit();
