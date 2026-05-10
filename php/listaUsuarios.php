@@ -9,6 +9,7 @@ if ($_SERVER["REQUEST_METHOD"] != "GET") {
 
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="../css/principal.css">
     <title>Lista de usuarios</title>
 </head>
 
