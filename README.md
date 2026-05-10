@@ -2,6 +2,16 @@
 
 # Base de datos
 
+TODO: validar contraseña en modificar form
+en formulario de editar el nav no despliega menu
+ver usuarios no funciona
+iniciar sesion contraseña oculta
+deberiamos validar en iniciar sesion que si no pulsa terminos y condiciones no deje aceptar
+usuario existente al hacer otro admin?
+formulario supremo pobrecito, no valida los datos, agregar a nav
+
+
+
 El proyecto usa una base de datos MySQL llamada ProyectoPHP.
 
 SQL para crear la base de datos y la tabla principal:
