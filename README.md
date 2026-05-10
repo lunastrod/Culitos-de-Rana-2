@@ -1,197 +1,118 @@
+# Integrantes del equipo:
+* Zoe Jastreb
+* David Martínez
+* Daniel Parra
+
 # Culitos de Rana - Documentación del proyecto
+Enlace a github: https://github.com/lunastrod/Culitos-de-Rana-2
 
-# Base de datos
+# Instrucciones de uso
+Entrar en el index.html, este fichero redirige a la página principal.
+La base de datos está en AWS creada, no es necesario crear una tabla local para usar la base de datos.
+Los formularios principales están en el menu principal, esquina superior derecha. Se puede iniciar sesión o registrarse.
+Una vez iniciada sesión, se puede acceder a un formulario de edición de contraseña y nombre de usuario.
+Para crear un usuario administrador se debe acceder a formularioRegistrarseAdmin.html manualmente.
+Si el usuario es administrador, se puede acceder a la página listaUsuarios.php que permite eliminar usuarios y ver todos los usuarios registrados.
 
-TODO: 
-validar contraseña en modificar form
-deberiamos validar en registrar que si no pulsa terminos y condiciones no deje aceptar QUE???
---poner cosas con get a post.
---en formulario de editar el nav no despliega menu
---ver usuarios no funciona
---iniciar sesion contraseña oculta
---usuario existente al hacer otro admin?
---formulario supremo pobrecito, no valida los datos, agregar a nav
---boton editar en lista usuarios no funciona
---Gestion de usuarios Nuevo usuario no funciona
---$_SESSION para gestion de sesiones segura???
+# Requisitos del Proyecto
 
-
-
-El proyecto usa una base de datos MySQL llamada ProyectoPHP.
-
-SQL para crear la base de datos y la tabla principal:
-
+## Funcionalidad CRUD Completa
+Tenemos una base de datos de usuarios que se pueden hacer las 4 operaciones CRUD (create, read, update, delete).
+## Conexión a Base de Datos
+Nos conectamos a una base de datos remota en AWS para no tener que tener varias locales.
+## Diseño de la Base de Datos (Tablas, Relaciones, Claves)
 ```
-DROP DATABASE IF EXISTS ProyectoPHP;
-CREATE DATABASE ProyectoPHP CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+DROP DATABASE IF EXISTS proyectophp2;
+CREATE DATABASE proyectophp2;
+USE proyectophp2;
 
-USE ProyectoPHP;
-
-CREATE TABLE usuario (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    nombre VARCHAR(100),
-    dni VARCHAR(20),
-    edad INT,
-    provincia VARCHAR(50),
-    email VARCHAR(255),
-    telefono VARCHAR(20),
-    mensaje_info TEXT,
-    nomina_fichero VARCHAR(300),
-    color_favorito VARCHAR(20),
-    genero VARCHAR(20),
-    valoracion INT,
-    fecha_nacimiento VARCHAR(20)
+CREATE TABLE users(
+    id int AUTO_INCREMENT NOT NULL PRIMARY KEY,
+    username varchar(100) NOT NULL unique,
+    pwd varchar(255) NOT NULL,
+    access int NOT NULL
 );
 ```
+No hay relaciones entre tablas, usamos una clave primaria para una tabla.
+## Validación de Formularios
+Los formularios se validan en formulario.js
+Tenemos una funcion para cada campo, una funcion para cada formulario y usamos listener blur para validar los campos en tiempo real y un listener submit para validar el formulario completo.
+## Interfaz de Usuario
+La interfaz es limpia incluso para tablas de administracion como listaUsuarios.php
+## Seguridad (Protección contra Inyecciones SQL)
+Usamos prepared statements para evitar inyecciones SQL en todas las consultas.
+## Distribución de Ficheros (Estructura organizada)
+Los ficheros están organizados en:
+* directorio css: ficheros css
+* directorio js: ficheros js
+* directorio html: páginas del proyecto principales que están diseñadas para el usuario.
+* directorio php: ficheros php y utilidades que se usan en las páginas del proyecto.
+* directorio imagenes: imagenes usadas en las páginas del proyecto.
+## Documentación del Proyecto
+README.md: Documentación del proyecto.
+## Mensajes de Error y Confirmación
+Usamos popups y alerts para avisar al usuario de errores.
+## Código Estructurado y Comentado
+Codigo js estructurado en funciones
+Codigo php estructurado en ficheros distintos con una funcion concreta.
+## Forma Procedimental / Notación Orientada a Objetos
+No se mezclan POO y notación funcional
+## Gestión de Sesiones y Autenticación
+Usamos la variable $_SESSION para gestionar las sesiones y autenticar al usuario.
+Comprobamos la sesion para modificar a qué partes del proyecto tiene acceso un usuario (menus, formularios, etc).
+
+
+# Estructura del Proyecto
+
+## Páginas Principales
+* **index.html**: Punto de entrada del sitio. Redirige a la página principal.
+* **CulitoDeRana.php**: Página principal.
+
+## Formularios y Usuario
+* **html/formularioInicioSesion.html**: Formulario de inicio de sesión. Muestra un error si las credenciales son incorrectas.
+* **html/formularioRegistrarse.html**: Formulario de registro para nuevos clientes. Comprueba en tiempo real si el nombre de usuario ya existe.
+* **html/formularioRegistrarseAdmin.html**: Igual que el anterior, pero crea el usuario con nivel de acceso de administrador.
+* **html/perfil.php**: Página de gestión del perfil. Permite cambiar el nombre de usuario y la contraseña, y eliminar la cuenta.
+
+## Administración de Usuarios
+* **php/listaUsuarios.php**: Panel de administración. Lista todos los usuarios registrados y permite banearlos. Solo pueden acceder administradores.
+
+## Estilos (CSS)
+* **css/principal.css**: Hoja de estilos global. Define la navegación, formularios, footer y componentes comunes.
+* **css/secundarias.css**: Estilos específicos para las páginas de contenido (nuestro equipo, empresa, clientes, mascota).
+
+## JavaScript
+* **js/CulitoDeRana.js**: Script global. Gestiona los menús desplegables de navegación y funciones de ventanas emergentes.
+* **js/formulario.js**: Script de validación de formularios. Valida campos de formularios y gestiona el submit.
+
+## Páginas Secundarias
+* **html/nuestrosClientes.php**
+* **html/nuestraEmpresa.php**
+* **html/conoceANuestroEquipo.php**
+* **html/conoceANuestraMascota.php**
+
+## Navegación
+* **php/nav.php**: Barra de navegación superior compartida por todas las páginas. Muestra opciones distintas según el nivel de acceso del usuario (sin sesión, usuario, administrador).
+* **php/footer.php**: Footer compartido con enlaces a páginas secundarias y logos de patrocinadores.
+
+## Popups y Mensajes
+* **html/enviado.html**: Confirmación de envío exitoso del formulario de contacto.
+* **html/bienvenida.html**: Mensaje de bienvenida mostrado tras iniciar sesión correctamente.
+* **html/accesoNoAutorizado.html**: Error mostrado cuando se intenta acceder a un recurso PHP directamente sin pasar por el flujo correcto.
+* **html/baseDatosActualizada.html**: Confirmación de que una operación sobre la base de datos se ha completado con éxito.
+* **html/datosIncompletos.html**: Error mostrado cuando un formulario PHP recibe datos incompletos o faltantes.
+* **html/inactividad.html**: Aviso de cierre de sesión automático por inactividad prolongada.
+* **html/enProceso.php**: Página provisional para secciones aún en desarrollo.
+
+## Utilidades PHP
+* **php/conexion.php**: Establece la conexión con la base de datos MySQL en AWS RDS. La base de datos no es local.
+* **php/cerrarS.php**: Destruye la sesión activa y redirige a la página principal.
+* **php/login.php**: Verifica las credenciales del usuario contra la base de datos e inicia la sesión si son correctas.
+* **php/insertUsuario.php**: Inserta un nuevo usuario con nivel de acceso de cliente tras el registro.
+* **php/insertUsuarioAdmin.php**: Inserta un nuevo usuario con nivel de acceso de administrador.
+* **php/cambiarCredenciales.php**: Actualiza el nombre de usuario y/o contraseña tras verificar la contraseña actual.
+* **php/eliminarCuenta.php**: Elimina la cuenta del usuario en sesión y cierra la sesión.
+* **php/eliminarUsuario.php**: Elimina un usuario por ID. Solo accesible desde el panel de administración.
+* **php/comprobarUsuario.php**: Devuelve si un nombre de usuario ya está registrado en la base de datos.
 
-La tabla usuario guarda los datos enviados desde el formulario. El campo id es la clave primaria y se genera automáticamente. El campo nomina_fichero guarda la ruta del fichero PDF subido por el usuario.
 
-# Estructura de ficheros PHP
-
-Los ficheros PHP están dentro de la carpeta php.
-
-php/conexion.php
-php/insertUsuario.php
-php/listaUsuarios.php
-php/editarFormulario.php
-php/editarUsuario.php
-php/eliminarUsuario.php
-php/datosIncompletos.html
-php/accesoNoAutorizado.html
-php/baseDatosActualizada.html
-
-Los ficheros principales de operaciones con base de datos son insertUsuario.php, listaUsuarios.php, editarUsuario.php y eliminarUsuario.php.
-
-Los ficheros datosIncompletos.html, accesoNoAutorizado.html y baseDatosActualizada.html son páginas auxiliares para mostrar mensajes reutilizables.
-
-# Resumen de cada fichero PHP
-
-conexion.php
-
-Contiene los datos de conexión a MySQL: host, puerto, usuario, contraseña y base de datos. Crea la variable $conn usando mysqli. Si la conexión falla, muestra un mensaje de error y detiene la ejecución.
-
-insertUsuario.php
-
-Recibe los datos del formulario mediante POST. Comprueba que los campos principales existan con isset y que no estén vacíos con empty. Si los datos son correctos, guarda el usuario en la tabla usuario usando prepare statement. También intenta subir el PDF de la nómina a la carpeta ficheros/nominas y guarda la ruta en el campo nomina_fichero. Si todo va bien, incluye baseDatosActualizada.html.
-
-listaUsuarios.php
-
-Muestra una tabla HTML con todos los usuarios guardados en la base de datos. Hace una consulta SELECT * FROM usuario. Cada fila incluye dos formularios: uno para editar y otro para eliminar. El botón de eliminar usa confirm() para pedir confirmación antes de borrar.
-
-editarFormulario.php
-
-Recibe por POST los datos de un usuario desde listaUsuarios.php. Si los datos están completos, muestra un formulario HTML con los campos rellenados. Este formulario envía los cambios a editarUsuario.php.
-
-editarUsuario.php
-
-Recibe por POST los datos editados. Comprueba que los datos obligatorios existan y no estén vacíos. Ejecuta un UPDATE sobre la tabla usuario usando prepare statement. Si se sube una nueva nómina, intenta guardar el nuevo fichero y actualiza la ruta. Si la operación termina correctamente, incluye baseDatosActualizada.html.
-
-eliminarUsuario.php
-
-Recibe por POST el id del usuario. Comprueba que exista y no esté vacío. Ejecuta un DELETE usando prepare statement para eliminar el usuario de la tabla usuario. Si la operación termina correctamente, incluye baseDatosActualizada.html.
-
-datosIncompletos.html
-
-Página auxiliar que muestra un mensaje cuando faltan datos obligatorios en un formulario o en una petición POST.
-
-accesoNoAutorizado.html
-
-Página auxiliar que se muestra cuando se intenta acceder directamente a un fichero que solo debe usarse mediante POST.
-
-baseDatosActualizada.html
-
-Página auxiliar que muestra el mensaje "Base de datos actualizada correctamente" y un enlace para volver a listaUsuarios.php.
-
-# Acceso al formulario
-
-El formulario principal está en:
-
-html/formulario.php
-
-Se puede abrir desde el navegador entrando a esa página dentro del servidor local del proyecto.
-
-Ejemplo de ruta habitual:
-
-http://localhost/Culitos-de-Rana-2/html/formulario.php
-
-El formulario envía los datos a:
-
-php/insertUsuario.php
-
-Para consultar los usuarios guardados, editar o eliminar registros, se debe acceder a:
-
-php/listaUsuarios.php
-
-Ejemplo:
-
-http://localhost/Culitos-de-Rana-2/php/listaUsuarios.php
-
-# Resumen de las demás páginas
-
-index.html
-
-Página inicial del proyecto. Sirve como punto de entrada general.
-
-html/CulitoDeRana.html
-
-Página principal de la web. Presenta la marca Culitos de Rana y sirve como navegación hacia otras secciones.
-
-html/formulario.php
-
-Página con el formulario para introducir los datos del usuario y calcular la prima de seguro.
-
-html/nuestrosClientes.html
-
-Página dedicada a mostrar clientes, patrocinadores o entidades relacionadas con la empresa.
-
-html/nuestraEmpresa.html
-
-Página informativa sobre la empresa, su identidad y sus valores.
-
-html/conoceANuestraMascota.html
-
-Página dedicada a la mascota o elemento identificativo de la marca.
-
-html/conoceANuestroEquipo.html
-
-Página que presenta el equipo de trabajo o las personas que forman parte del proyecto.
-
-html/enProceso.html
-
-Página usada para secciones que todavía están en desarrollo.
-
-html/enviado.html
-
-Página que se abre como confirmación visual cuando el formulario se envía desde JavaScript.
-
-html/inactividad.html
-
-Página usada por el JavaScript para avisar de inactividad.
-
-html/bienvenida.html
-
-Página de bienvenida del proyecto.
-
-css/principal.css
-
-Hoja de estilos principal de la web.
-
-css/secundarias.css
-
-Hoja de estilos para páginas secundarias.
-
-js/CulitoDeRana.js
-
-Fichero JavaScript principal. Contiene funciones para menús, popups, validación del formulario, aviso de inactividad, contador de tiempo y cambios visuales en el botón de envío.
-
-imagenes
-
-Carpeta con las imágenes usadas por la web: logo, personas, iconos, fondos, patrocinadores y recursos visuales.
-
-ficheros/nominas
-
-Carpeta destinada a guardar los ficheros PDF subidos desde el formulario.
-
-sql/creaBaseDatos.sql
-
-Fichero con el SQL necesario para crear la base de datos ProyectoPHP y la tabla usuario.
