@@ -20,11 +20,11 @@
                 <button class="dropdownButton">Nosotros</button>
 
                 <ul id="menu" class="dropdown">
-                    <li><a href="CulitoDeRana.php">Principal</a></li>
-                    <li><a href="nuestraEmpresa.php">Nuestra Empresa</a></li>
-                    <li><a href="nuestrosClientes.php">Nuestros Clientes</a></li>
-                    <li><a href="conoceANuestroEquipo.php">Nuestro Equipo</a></li>
-                    <li><a href="conoceANuestraMascota.php">Nuestra Mascota</a></li>
+                    <li><a href="../html/CulitoDeRana.php">Principal</a></li>
+                    <li><a href="../html/nuestraEmpresa.php">Nuestra Empresa</a></li>
+                    <li><a href="../html/nuestrosClientes.php">Nuestros Clientes</a></li>
+                    <li><a href="../html/conoceANuestroEquipo.php">Nuestro Equipo</a></li>
+                    <li><a href="../html/conoceANuestraMascota.php">Nuestra Mascota</a></li>
                 </ul>
 
             </div>

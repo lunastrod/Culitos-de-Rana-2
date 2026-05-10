@@ -11,8 +11,8 @@ deberiamos validar en registrar que si no pulsa terminos y condiciones no deje a
 --usuario existente al hacer otro admin?
 formulario supremo pobrecito, no valida los datos, agregar a nav
 boton editar en lista usuarios no funciona
-Gestion de usuarios Nuevo usuario no funciona
-usuarioExistente no existe
+--Gestion de usuarios Nuevo usuario no funciona
+usuarioExistente.html no existe
 
 
 

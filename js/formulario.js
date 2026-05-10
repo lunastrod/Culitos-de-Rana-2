@@ -61,11 +61,12 @@ function validaFormulario() {
         } else if (id === "nomina") {
             value = campo.files.length > 0 ? campo.files[0].name : "";
         } else {
-             value = campo.value;
-             let error = validaCampo(id, value);
-            muestraError(id, error);
-            if (error) valido = false;
+            value = campo.value;
+
         }
+        let error = validaCampo(id, value);
+        muestraError(id, error);
+        if (error) valido = false;
     }
     return valido;
 }
@@ -180,6 +181,15 @@ document.getElementById('nombre').addEventListener('input', function(){
 const params = new URLSearchParams(window.location.search);
 
 if (params.get('error') === 'credenciales') {
-    document.getElementById('mensajeError').style.display = 'block';
-    document.getElementById('mensajeError').style.color = 'red';
+    let me=document.getElementById('mensajeError');
+    if(me){
+        me.style.display = 'block'
+        me.style.color = 'red';
+    }
 }
+
+function confirmarEliminar() {
+    if (confirm('¿Estás seguro de que quieres eliminar tu cuenta?\nEsta acción no se puede deshacer.')) {
+        document.getElementById('formEliminar').submit();
+    }
+} 

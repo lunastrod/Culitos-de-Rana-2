@@ -10,7 +10,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         $nombreIn = $_POST['nombre'];
         $pwdIn = $_POST['contrasenia'];
-        $accessSel = 0;
 
 
 
