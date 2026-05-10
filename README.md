@@ -4,15 +4,16 @@
 
 TODO: 
 validar contraseña en modificar form
+deberiamos validar en registrar que si no pulsa terminos y condiciones no deje aceptar QUE???
+--poner cosas con get a post.
 --en formulario de editar el nav no despliega menu
 --ver usuarios no funciona
 --iniciar sesion contraseña oculta
-deberiamos validar en registrar que si no pulsa terminos y condiciones no deje aceptar
 --usuario existente al hacer otro admin?
-formulario supremo pobrecito, no valida los datos, agregar a nav
-boton editar en lista usuarios no funciona
+--formulario supremo pobrecito, no valida los datos, agregar a nav
+--boton editar en lista usuarios no funciona
 --Gestion de usuarios Nuevo usuario no funciona
-usuarioExistente.html no existe
+--$_SESSION para gestion de sesiones segura???
 
 
 

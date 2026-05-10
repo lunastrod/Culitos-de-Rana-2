@@ -39,7 +39,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             }
         } catch (mysqli_sql_exception $e) {
             if ($conn->errno == 1062) {
-                header("Location: ../html/usuarioExistente.html");
+                ?>
+                <script>
+                    alert("El usuario ya existe");
+                </script>
+                <?php
+                header("Location: ../html/formularioInicioSesion.html");
+                exit;
             }
             die('Error insertando usuario: ' . $e->getMessage());
         }

@@ -65,25 +65,25 @@ $mensajes_error = [
             <hr class="perfil-separador">
             <h3 class="perfil-h3">Modificar usuario / contraseña</h3>
 
-            <form action="../php/cambiarCredenciales.php" method="post" style="width:100%;">
+            <form action="../php/cambiarCredenciales.php" method="post" style="width:100%;" id="formPerfil">
                 <div class="input-name">
                     <label for="nombre"><em>Nuevo usuario:</em></label>
-                    <input class="input" type="text" name="nuevo_username"
+                    <input class="input" type="text" id = "nuevo_username" name="nuevo_username"
                            value="<?php echo htmlspecialchars($username); ?>" required>
                 </div>
                 <div class="input-name">
                     <label><em>Contraseña actual:</em></label>
-                    <input class="input" type="password" name="pwd_actual"
+                    <input class="input" type="password" id = "pwd_actual" name="pwd_actual"
                            placeholder="Obligatorio para guardar" required>
                 </div>
                 <div class="input-name">
                     <label for="contrasenia"><em>Nueva contraseña:</em></label>
-                    <input class="input" type="password" name="nueva_pwd"
+                    <input class="input" type="password" id = "nueva_pwd" name="nueva_pwd"
                            placeholder="Déjalo vacío para no cambiarla">
                 </div>
                 <div class="input-name">
                     <label for="contrasenia"><em>Confirmar contraseña:</em></label>
-                    <input class="input" type="password" name="confirmar_pwd"
+                    <input class="input" type="password" id = "confirmar_pwd" name="confirmar_pwd"
                            placeholder="Repite la nueva contraseña">
                 </div>
                 <br>

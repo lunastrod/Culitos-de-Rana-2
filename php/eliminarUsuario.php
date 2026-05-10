@@ -10,8 +10,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt = $conn->prepare("DELETE FROM users WHERE id = ?");
     $stmt->bind_param("i", $id);
     $stmt->execute();
-
-        include 'baseDatosActualizada.html';
+    ?>
+    <script>
+        alert("El usuario se ha eliminado correctamente.");
+        window.location.href = "../php/listaUsuarios.php";
+    </script>
+    <?php
     } else {
         include 'datosIncompletos.html';
     }

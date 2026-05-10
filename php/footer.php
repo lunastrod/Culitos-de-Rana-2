@@ -16,7 +16,7 @@
         <div class="sponsors">
             <h1>Nuestros sponsors</h1>
 
-            <div class="fotosSponsors" class="fotosSponsors">
+            <div class="fotosSponsors">
                 <div class="fotosSponsorsD">
                     <img src="../imagenes/sponsorPato.png" alt="refugio de patos">
                     <p>Refugio de patos patín</p>
