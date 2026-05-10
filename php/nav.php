@@ -1,6 +1,6 @@
 <nav class="navigation">
         <div class="logoTitle">
-            <a href="CulitoDeRana.php"><img src="../imagenes/rana.png" alt="logo" class="logo"></img></a>
+            <a href="../html/CulitoDeRana.php"><img src="../imagenes/rana.png" alt="logo" class="logo"></img></a>
             <p class="title">Culitos de rana</p>
         </div>
 
