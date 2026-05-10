@@ -48,22 +48,22 @@ $mensajes_error = [
                 <input class="input" type="text" value="<?php echo $user['access'] == 1 ? 'Administrador' : 'Usuario Normal'; ?>" readonly>
             </div>
 
-            <div class="input-submit" style="margin-top: 10px;">
-                <a href="CulitoDeRana.php" style="text-decoration: none;">
+            <div class="input-submit perfil-volver">
+                <a href="CulitoDeRana.php">
                     <input class="input" type="button" value="Volver">
                 </a>
             </div>
 
             <!-- Mensajes de feedback -->
             <?php if ($error && isset($mensajes_error[$error])): ?>
-                <p style="color:red; text-align:center; margin: 10px 0;"><?php echo $mensajes_error[$error]; ?></p>
+                <p class="perfil-mensaje-error"><?php echo $mensajes_error[$error]; ?></p>
             <?php elseif ($ok === 'credenciales'): ?>
-                <p style="color:green; text-align:center; margin: 10px 0;">Credenciales actualizadas correctamente.</p>
+                <p class="perfil-mensaje-ok">Credenciales actualizadas correctamente.</p>
             <?php endif; ?>
 
             <!-- Modificar credenciales -->
-            <hr style="margin: 25px 0; border-top: 1px solid rgba(0,0,0,0.1);">
-            <h3 style="margin-bottom: 20px;">Modificar usuario / contraseña</h3>
+            <hr class="perfil-separador">
+            <h3 class="perfil-h3">Modificar usuario / contraseña</h3>
 
             <form action="../php/cambiarCredenciales.php" method="post" style="width:100%;">
                 <div class="input-name">
@@ -93,16 +93,14 @@ $mensajes_error = [
             </form>
 
             <!-- Zona de peligro -->
-            <hr style="margin: 30px 0; border-top: 1px solid rgba(200,0,0,0.2);">
-            <h3 style="color:#c00; margin-bottom: 10px;">Zona de peligro</h3>
-            <p style="color:#666; font-size:0.9em; margin-bottom: 15px;">
+            <hr class="perfil-separador-peligro">
+            <h3 class="perfil-h3-peligro">Zona de peligro</h3>
+            <p class="perfil-aviso-peligro">
                 Al eliminar tu cuenta se borrarán todos tus datos de forma permanente.
             </p>
             <form action="../php/eliminarCuenta.php" method="post" id="formEliminar">
-                <div style="display:flex; justify-content:center;">
-                    <button type="button" onclick="confirmarEliminar()"
-                        style="background-color:#c00; color:white; border:none; border-radius:20px;
-                               padding:10px 24px; font-size:1em; cursor:pointer; font-weight:bold;">
+                <div class="perfil-btn-eliminar-wrapper">
+                    <button type="button" class="perfil-btn-eliminar" onclick="confirmarEliminar()">
                         Eliminar cuenta
                     </button>
                 </div>

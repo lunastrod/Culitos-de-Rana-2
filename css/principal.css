@@ -803,3 +803,66 @@ footer {
     align-items: center;
     height: 79.2vh;
 }
+
+/*---------- perfil.php ----------*/
+.perfil-volver {
+    margin-top: 10px;
+}
+
+.perfil-volver a {
+    text-decoration: none;
+}
+
+.perfil-mensaje-error {
+    color: red;
+    text-align: center;
+    margin: 10px 0;
+}
+
+.perfil-mensaje-ok {
+    color: green;
+    text-align: center;
+    margin: 10px 0;
+}
+
+.perfil-separador {
+    margin: 25px 0;
+    border-top: 1px solid rgba(0,0,0,0.1);
+}
+
+.perfil-separador-peligro {
+    margin: 30px 0;
+    border-top: 1px solid rgba(200,0,0,0.2);
+}
+
+.perfil-h3 {
+    margin-bottom: 20px;
+}
+
+.perfil-h3-peligro {
+    color: #c00;
+    margin-bottom: 10px;
+}
+
+.perfil-aviso-peligro {
+    color: #666;
+    font-size: 0.9em;
+    margin-bottom: 15px;
+}
+
+.perfil-btn-eliminar-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.perfil-btn-eliminar {
+    background-color: #c00;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 24px;
+    font-size: 1em;
+    cursor: pointer;
+    font-weight: bold;
+}
+/*--------------------------------------*/
