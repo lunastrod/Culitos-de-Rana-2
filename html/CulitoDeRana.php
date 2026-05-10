@@ -10,7 +10,7 @@ session_start();
     <link rel="stylesheet" href="../css/principal.css">
 </head>
 
-<body onload="pop('bienvenida.html',4,4)">
+<body >
     <?php 
     if (session_status() == PHP_SESSION_NONE) {
     session_start();
